@@ -1,3 +1,11 @@
+venv_t
+.vscode
+*__pycache__*
+*.sock
+/static/
+venv*/
+*.swp
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
