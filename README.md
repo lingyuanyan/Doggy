@@ -1,2 +1,2 @@
 # Doggy
-Dogs make nice pets.
+Dogs make great pets :) (from Lamuel Si)
