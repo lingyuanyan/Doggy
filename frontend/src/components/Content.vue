@@ -1,11 +1,19 @@
 <template>
-  <div id="content">
-    <h2>Content</h2>
-  </div>
+<div id="content">
+  <h2>Content</h2>
+  <DogImage name="me" path="http://lingyuanyan.com/static/lingyuanyanapp/Images/Portrait.jpg" caption="random dog" des="random dog pic I found online">
+  </DogImage>
+</div>
 </template>
 
 <script>
+import DogImage from './DogImage.vue'
+
 export default {
+  name: 'Content',
+  components: {
+    DogImage,
+  }
 }
 </script>
 
