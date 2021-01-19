@@ -3,6 +3,13 @@
   <h2>Content</h2>
   <DogImage name="me" path="http://lingyuanyan.com/static/lingyuanyanapp/Images/Portrait.jpg" caption="random dog" des="random dog pic I found online">
   </DogImage>
+  <DogImage name="me" path="http://lingyuanyan.com/static/lingyuanyanapp/Images/Portrait.jpg" caption="random dog" des="random dog pic I found online">
+  </DogImage>
+  <DogImage name="me" path="http://lingyuanyan.com/static/lingyuanyanapp/Images/Portrait.jpg" caption="random dog" des="random dog pic I found online">
+  </DogImage>
+  <DogImage name="me" path="http://lingyuanyan.com/static/lingyuanyanapp/Images/Portrait.jpg" caption="random dog" des="random dog pic I found online">
+  </DogImage>
+
 </div>
 </template>
 

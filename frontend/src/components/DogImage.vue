@@ -1,9 +1,9 @@
 <template>
 <div id="doginfo">
-  <h3>{{ name }}</h3>
   <img :src="path" />
-  <p>{{ caption }}</p>
-  <p>{{ des }}</p>
+  <h3>{{ name }}</h3>
+  <p class="caption">{{ caption }}</p>
+  <p class="des">{{ des }}</p>
 </div>
 </template>
 
@@ -30,5 +30,13 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+#doginfo {
+  border: solid black 1px;
+  border-radius: 15px;
+  width: 33em;
+}
+img {
+  height: 100px;
+}
 
 </style>
