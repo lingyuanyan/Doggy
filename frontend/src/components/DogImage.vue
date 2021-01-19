@@ -1,15 +1,21 @@
 <template>
-<div id="doginfo">
-  <img :src="path" />
-  <h3>{{ name }}</h3>
-  <p class="caption">{{ caption }}</p>
-  <p class="des">{{ des }}</p>
-</div>
+  <div id="doginfo" class="container">
+    <div class="row">
+      <div class="col-mid-3 col-sm-6">
+          <img :src="path"/>
+      </div>
+      <h3 class="col-mid-3 col-sm-6">{{ name }}</h3>
+    </div>
+    <div class="row">
+    <p class="caption col-mid-3 col-sm-6">{{ caption }}</p>
+    <p class="des com-mid-3 col-sm-6">{{ des }}</p>
+    </div>
+  </div>
 </template>
 
 <script>
 export default {
-  name: 'DogImage',
+  name: "DogImage",
   props: {
     name: {
       type: String,
@@ -25,7 +31,7 @@ export default {
       required: true,
     },
   },
-}
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -38,5 +44,4 @@ export default {
 img {
   height: 100px;
 }
-
 </style>
