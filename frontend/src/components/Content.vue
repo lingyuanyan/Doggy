@@ -26,7 +26,7 @@
           name="me"
           path="http://lingyuanyan.com/static/lingyuanyanapp/Images/Portrait.jpg"
           caption="random dog"
-          des="random dog pic I found online"
+          des="random dog pic I found onlinerandom dog pic I found onlinerandom dog pic I found online"
         >
         </DogImage>
         <DogImage
