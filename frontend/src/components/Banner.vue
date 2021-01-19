@@ -23,11 +23,11 @@ export default {
   }
 
   .logo {
-    margin-left: 10px;
+    margin-left: 15px;
   }
 
   .doggy_logo {
-    margin-right: 10px;
+    margin-right: 15px;
   }
 
   .logo, .doggy_logo {
