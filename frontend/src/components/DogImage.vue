@@ -1,14 +1,14 @@
 <template>
   <div id="doginfo" class="container">
     <div class="row">
-      <div class="col-mid-3 col-sm-6">
-          <img :src="path"/>
+      <div class="col-sm-6">
+          <img class="img row-sm-6" :src="path"/>
+          <p class="caption row-sm-6">{{ caption }}</p><br>
       </div>
-      <h3 class="col-mid-3 col-sm-6">{{ name }}</h3>
-    </div>
-    <div class="row">
-    <p class="caption col-mid-3 col-sm-6">{{ caption }}</p>
-    <p class="des com-mid-3 col-sm-6">{{ des }}</p>
+      <div class="col-sm-6">
+        <h3 class="name row-sm-6">{{ name }}</h3><br>
+        <p class="des row-sm-6">{{ des }}</p><br>
+      </div>
     </div>
   </div>
 </template>
