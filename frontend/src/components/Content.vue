@@ -57,6 +57,7 @@
 </template>
 
 <script>
+import axios from 'axios'; // at the start of your <script> tag, before you "export default ..."
 import LabelImageInput from "./ImageUpload.vue"
 import DogImage from "./DogImage.vue";
 
@@ -81,12 +82,17 @@ export default {
       console.log(this.dogDes.trim());
       console.log('Uploaded Caption:');
       console.log(this.dogCaption.trim());
-    },
+      axios.post('http://127.0.0.1:8000/api/doggies/', {
+        name: this.dogName,
+        des: this.dogDes,
+        caption: this.dogCaption,
+        pic : this.uploaded_image,
+      });
+    }
   },
   components: {
     DogImage,
     LabelImageInput
-
   },
 };
 </script>
