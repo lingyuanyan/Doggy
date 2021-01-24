@@ -39,6 +39,12 @@
         </DogImage>
       </div>
       <form class="imageAdding" @submit.prevent="submitForm">
+      <label for="name">Enter Name</label>
+      <input type="text" id="name" name="name" v-model="dogName"><br>
+      <label for="des">Enter Description</label>
+      <input type="textarea" id="des" name="des" v-model="dogDes"><br>
+      <label for="caption">Enter caption</label>
+      <input type="text" id="caption" name="caption" v-model="dogCaption"><br>
       <LabelImageInput :label="upload_label" v-model="uploaded_image"></LabelImageInput>
       <input type="submit">
     </form>
@@ -58,6 +64,9 @@ export default {
   name: "Content",
   data() {
     return {
+      dogName: '',
+      dogDes: '',
+      dogCaption: '',
       upload_label: 'uplaod_image',
       uploaded_image: null,
     };
@@ -66,6 +75,12 @@ export default {
     async submitForm() {
       console.log('Uploaded Image:');
       console.log(this.uploaded_image);
+      console.log('Uploaded Name:');
+      console.log(this.dogName);
+      console.log('Uploaded Description:');
+      console.log(this.dogDes);
+      console.log('Uploaded Caption:');
+      console.log(this.dogCaption);
     },
   },
   components: {
