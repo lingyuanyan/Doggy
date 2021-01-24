@@ -38,21 +38,38 @@
         >
         </DogImage>
       </div>
+      <div class="imageAdding">
+      <LabelImageInput :label="upload_label" v-model="uploaded_image"></LabelImageInput>
+      </div>
+<!--  <form>
+        <label for="fname">Password:</label><br>
+        <input type="text" id="fname" name="fname" placeholder="Enter Password">
+      </form>-->
     </div>
   </div>
 </template>
 
 <script>
+import LabelImageInput from "./ImageUpload.vue"
 import DogImage from "./DogImage.vue";
 
 export default {
   name: "Content",
+  data() {
+    return {
+      upload_label: 'uplaod_image',
+      uploaded_image:null
+    };
+  },
   components: {
     DogImage,
+    LabelImageInput
+
   },
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
 </style>
