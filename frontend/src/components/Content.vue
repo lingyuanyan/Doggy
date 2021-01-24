@@ -2,42 +2,17 @@
   <div id="content">
     <h2>Content</h2>
     <div class="container">
-      <div class="row">
-        <DogImage
+      <div  class="row">
+        <DogImage v-for="(doggy, i) in doggy_list" :key="i"
+          :name="doggy.name"
           class="col-sm"
-          name="me"
-          path="http://lingyuanyan.com/static/lingyuanyanapp/Images/Portrait.jpg"
-          caption="random dog"
-          des="random dog pic I found online"
-        >
-        </DogImage>
-        <DogImage
-          class="col-sm"
-          name="me"
-          path="http://lingyuanyan.com/static/lingyuanyanapp/Images/Portrait.jpg"
-          caption="random dog"
-          des="random dog pic I found online"
+          :path="doggy.pic"
+          :caption="doggy.caption"
+          :des="doggy.des"
         >
         </DogImage>
       </div>
-      <div class="row">
-        <DogImage
-          class="col-sm"
-          name="me"
-          path="http://lingyuanyan.com/static/lingyuanyanapp/Images/Portrait.jpg"
-          caption="random dog"
-          des="random dog pic I found onlinerandom dog pic I found onlinerandom dog pic I found online"
-        >
-        </DogImage>
-        <DogImage
-          name="me"
-          class="col-sm"
-          path="http://lingyuanyan.com/static/lingyuanyanapp/Images/Portrait.jpg"
-          caption="random dog"
-          des="random dog pic I found online"
-        >
-        </DogImage>
-      </div>
+      <div>
       <form class="imageAdding" @submit.prevent="submitForm">
       <label for="name">Enter Name</label>
       <input type="text" id="name" name="name" v-model="dogName"><br>
@@ -48,6 +23,9 @@
       <LabelImageInput :label="upload_label" v-model="uploaded_image"></LabelImageInput>
       <input type="submit">
     </form>
+    <button @click="load">load data</button>
+  </div>
+
 <!--  <form>
         <label for="fname">Password:</label><br>
         <input type="text" id="fname" name="fname" placeholder="Enter Password">
@@ -70,7 +48,12 @@ export default {
       dogCaption: '',
       upload_label: 'uplaod_image',
       uploaded_image: null,
+      doggy_list:[],
     };
+  },
+  created() {},
+  mounted() {
+    this.load();
   },
   methods: {
     async submitForm() {
@@ -87,8 +70,22 @@ export default {
         des: this.dogDes,
         caption: this.dogCaption,
         pic : this.uploaded_image,
-      });
-    }
+      }).then(()=>(this.load())).catch(
+        (error)=>(console.log(error))
+      );
+
+    },
+    async load() {
+      axios.get(
+        'http://127.0.0.1:8000/api/doggies/'
+      ).then(
+        (response)=>(this.doggy_list = response.data.results)
+      ).catch(
+        (error)=>(console.log(error))
+      )
+    },
+
+
   },
   components: {
     DogImage,
