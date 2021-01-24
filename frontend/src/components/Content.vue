@@ -38,9 +38,10 @@
         >
         </DogImage>
       </div>
-      <div class="imageAdding">
+      <form class="imageAdding" @submit.prevent="submitForm">
       <LabelImageInput :label="upload_label" v-model="uploaded_image"></LabelImageInput>
-      </div>
+      <input type="submit">
+    </form>
 <!--  <form>
         <label for="fname">Password:</label><br>
         <input type="text" id="fname" name="fname" placeholder="Enter Password">
@@ -58,8 +59,14 @@ export default {
   data() {
     return {
       upload_label: 'uplaod_image',
-      uploaded_image:null
+      uploaded_image: null,
     };
+  },
+  methods: {
+    async submitForm() {
+      console.log('Uploaded Image:');
+      console.log(this.uploaded_image);
+    },
   },
   components: {
     DogImage,

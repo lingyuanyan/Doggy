@@ -10,6 +10,7 @@
       accept="image/png, image/jpeg"
       style="display:none"
       @change="onChange($event)"
+
     />
     <p v-if="message != null">{{message}}</p>
   </div>
