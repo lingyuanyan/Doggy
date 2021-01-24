@@ -1,4 +1,4 @@
-"""DoggyApp URL Configuration
+"""Doggy URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.1/topics/http/urls/
@@ -15,7 +15,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf.urls import url, include
+from DoggyApp import views
+from rest_framework import routers
+
+router = routers.DefaultRouter()
+router.register(r'doggies', views.DoggyViewSet)
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/', include(router.urls)),
+    path('', include("DoggyApp.urls")),
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]

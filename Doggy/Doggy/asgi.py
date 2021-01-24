@@ -1,5 +1,5 @@
 """
-ASGI config for DoggyApp project.
+ASGI config for Doggy project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.asgi import get_asgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'DoggyApp.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Doggy.settings')
 
 application = get_asgi_application()

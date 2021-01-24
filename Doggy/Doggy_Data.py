@@ -9,7 +9,7 @@ import csv
 import re
 import traceback
 def DoggyData(drop_table):
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'DoggyApp.settings')
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Doggy.settings')
     # conn = sqlite3.connect('WC.db.sqlite')]
     dbsettings = settings.DATABASES['default']
 
@@ -23,13 +23,14 @@ def DoggyData(drop_table):
     cur.execute('''
     CREATE TABLE IF NOT EXISTS Doggy_Info (
         id SERIAL PRIMARY KEY,
+        name TEXT,
         pic TEXT,
         caption  TEXT,
-        info TEXT
+        des TEXT
         )
     ''')
     conn.commit()
     print("...")
     cur.close()
     print("Your Data has been successfully uploaded")
-DoggyData('N/A')
+DoggyData('yes')

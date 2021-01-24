@@ -7,11 +7,13 @@
 # Feel free to rename the models, but don't rename db_table values or field names.
 from django.db import models
 
+#Create your models here
 
 class DoggyInfo(models.Model):
+    name = models.TextField(blank=True, null=True)
     pic = models.TextField(blank=True, null=True)
     caption = models.TextField(blank=True, null=True)
-    info = models.TextField(blank=True, null=True)
+    des = models.TextField(blank=True, null=True)
 
     class Meta:
         managed = False

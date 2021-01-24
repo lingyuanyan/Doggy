@@ -74,13 +74,13 @@ export default {
   methods: {
     async submitForm() {
       console.log('Uploaded Image:');
-      console.log(this.uploaded_image);
+      console.log(this.uploaded_image.trim());
       console.log('Uploaded Name:');
-      console.log(this.dogName);
+      console.log(this.dogName.trim());
       console.log('Uploaded Description:');
-      console.log(this.dogDes);
+      console.log(this.dogDes.trim());
       console.log('Uploaded Caption:');
-      console.log(this.dogCaption);
+      console.log(this.dogCaption.trim());
     },
   },
   components: {
