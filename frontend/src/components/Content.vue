@@ -5,7 +5,7 @@
       <div  class="row">
         <DogImage v-for="(doggy, i) in doggy_list" :key="i"
           :name="doggy.name"
-          class="col-sm"
+          class="col-sm-6 col-xs-12 col-md-4 col-lg-3"
           :path="doggy.pic"
           :caption="doggy.caption"
           :des="doggy.des"
@@ -71,7 +71,11 @@ export default {
         caption: this.dogCaption,
         pic : this.uploaded_image,
       }).then(()=>(this.load())).catch(
-        (error)=>(console.log(error))
+        (error)=>(console.log(error)),
+        //this.dogName='',
+        //this.dogDes='',
+        //this.dogCaption='',
+        //this.uploaded_image= null,
       );
 
     },
