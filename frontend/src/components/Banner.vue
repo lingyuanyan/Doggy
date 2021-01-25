@@ -1,6 +1,6 @@
 <template>
   <div id="banner">
-    <img src="../assets/logo.png" alt="doggy_logo" class="doggy_logo" />
+    <img src="../assets/logo.png" alt="logo" class="logo" />
     <h1>Welcome to Doggy</h1>
     <img src="../assets/logo.png" alt="logo" class="logo" />
   </div>
@@ -33,6 +33,6 @@ export default {
   .logo, .doggy_logo {
     width: 10%;
     min-width: 50px;
-    max-width: 150px;
+    max-width: 100px;
   }
 </style>
