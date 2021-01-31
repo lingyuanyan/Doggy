@@ -1,8 +1,8 @@
 <template>
   <div id="banner">
-    <img src="../assets/logo.png" alt="logo" class="logo" />
+    <img src="../../assets/logo.png" alt="logo" class="logo" />
     <h1>Welcome to Doggy</h1>
-    <img src="../assets/logo.png" alt="logo" class="logo" />
+    <img src="../../assets/logo.png" alt="logo" class="logo" />
   </div>
 </template>
 
