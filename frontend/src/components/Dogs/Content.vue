@@ -12,7 +12,14 @@
         >
         </DogImage>
       </div>
-      <div>
+      <div v-show="password !== thePassword">
+        <form id="password" @submit.prevent="submitForm">
+          <label for="password">Enter the Password</label>
+          <input type="text" id="password" name="pasword" placeholder="password" v-model="passwordInput"><br>
+          <input type="submit" @click="CheckPassword">
+        </form>
+      </div>
+      <div v-show="password == thePassword">
       <form class="imageAdding" @submit.prevent="submitForm">
       <label for="name">Enter Name</label>
       <input type="text" id="name" name="name" v-model="dogName"><br>
@@ -45,6 +52,9 @@ export default {
       upload_label: 'uplaod_image',
       uploaded_image: null,
       doggy_list:[],
+      passwordInput:'',
+      password: '',
+      thePassword: 'Doggy_is_the_password',
     };
   },
   created() {},
@@ -84,8 +94,9 @@ export default {
         (error)=>(console.log(error))
       )
     },
-
-
+    async CheckPassword() {
+      this.password = this.passwordInput;
+    }
   },
   components: {
     DogImage,
@@ -93,7 +104,6 @@ export default {
   },
 };
 </script>
-
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
