@@ -3,6 +3,11 @@
     <img src="../../assets/logo.png" alt="logo" class="logo" />
     <h1>Welcome to Doggy</h1>
     <img src="../../assets/logo.png" alt="logo" class="logo" />
+    <nav>
+      <router-link to="/Dogs">Dogs</router-link>
+      <p></p>
+      <router-link to="/AboutUs">About us</router-link>
+    </nav>
   </div>
 </template>
 
@@ -34,5 +39,12 @@ export default {
     width: 10%;
     min-width: 50px;
     max-width: 100px;
+  }
+
+  a{
+
+  }
+  a:hover, a:active, a.router-link-active {
+
   }
 </style>

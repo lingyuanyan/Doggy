@@ -26,10 +26,6 @@
     <button @click="load">load data</button>
   </div>
 
-<!--  <form>
-        <label for="fname">Password:</label><br>
-        <input type="text" id="fname" name="fname" placeholder="Enter Password">
-      </form>-->
     </div>
   </div>
 </template>
