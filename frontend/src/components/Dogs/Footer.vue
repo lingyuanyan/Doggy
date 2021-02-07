@@ -1,5 +1,6 @@
 <template>
   <div id="footer">
+    <hr>
     <h2>Footer</h2>
   </div>
 </template>
@@ -12,4 +13,5 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
 </style>
