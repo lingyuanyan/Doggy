@@ -12,26 +12,29 @@
         >
         </DogImage>
       </div>
-      <div v-show="password !== thePassword">
-        <form id="password" @submit.prevent="submitForm">
-          <label for="password">Enter the Password</label>
-          <input type="text" id="password" name="pasword" placeholder="password" v-model="passwordInput"><br>
-          <input type="submit" @click="CheckPassword">
+      <details>
+        <summary>Upload Data</summary>
+        <div v-show="password !== thePassword">
+          <form id="password" @submit.prevent="submitForm">
+            <label for="password">Enter the Password</label>
+            <input type="text" id="password" name="pasword" placeholder="password" v-model="passwordInput"><br>
+            <input type="submit" @click="CheckPassword">
+          </form>
+        </div>
+        <div v-show="password == thePassword">
+        <form class="imageAdding" @submit.prevent="submitForm">
+          <label for="name">Enter Name</label>
+          <input type="text" id="name" name="name" v-model="dogName"><br>
+          <label for="des">Enter Description</label>
+          <input type="textarea" id="des" name="des" v-model="dogDes"><br>
+          <label for="caption">Enter caption</label>
+          <input type="text" id="caption" name="caption" v-model="dogCaption"><br>
+          <LabelImageInput :label="upload_label" v-model="uploaded_image"></LabelImageInput>
+          <input type="submit">
         </form>
+        <button @click="load">load data</button>
       </div>
-      <div v-show="password == thePassword">
-      <form class="imageAdding" @submit.prevent="submitForm">
-      <label for="name">Enter Name</label>
-      <input type="text" id="name" name="name" v-model="dogName"><br>
-      <label for="des">Enter Description</label>
-      <input type="textarea" id="des" name="des" v-model="dogDes"><br>
-      <label for="caption">Enter caption</label>
-      <input type="text" id="caption" name="caption" v-model="dogCaption"><br>
-      <LabelImageInput :label="upload_label" v-model="uploaded_image"></LabelImageInput>
-      <input type="submit">
-    </form>
-    <button @click="load">load data</button>
-  </div>
+    </details>
 
     </div>
   </div>
@@ -41,7 +44,6 @@
 import axios from 'axios'; // at the start of your <script> tag, before you "export default ..."
 import LabelImageInput from "./ImageUpload.vue"
 import DogImage from "./DogImage.vue";
-
 export default {
   name: "Content",
   data() {
@@ -50,7 +52,7 @@ export default {
       dogDes: '',
       dogCaption: '',
       upload_label: 'uplaod_image',
-      uploaded_image: null,
+      uploaded_image: require('@/assets/upload.png'),
       doggy_list:[],
       passwordInput:'',
       password: '',
