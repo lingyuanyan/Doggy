@@ -15,13 +15,14 @@
       <details>
         <summary>Upload Data</summary>
         <div v-show="password !== thePassword">
-          <form id="password" @submit.prevent="submitForm">
+          <p v-show="password !== null" class="warning">The password you entered was incorrect</p>
+          <form id="password" @submit.prevent="CheckPassword">
             <label for="password">Enter the Password</label>
             <input type="text" id="password" name="pasword" placeholder="password" v-model="passwordInput"><br>
-            <input type="submit" @click="CheckPassword">
+            <input type="submit">
           </form>
         </div>
-        <p v-if="error == true" class="warning">One of the required areas are not filled, please remember to fill in all the textboxes</p>
+        <p v-show="error == true" class="warning">One of the required areas are not filled, please remember to fill in all the textboxes</p>
         <div v-show="password == thePassword">
         <form class="imageAdding" @submit.prevent="submitForm">
           <label for="name">Enter Name</label>
@@ -54,10 +55,11 @@ export default {
       upload_label: 'uplaod_image',
       uploaded_image: require('@/assets/upload.png'),
       doggy_list:[],
-      passwordInput:'',
-      password: '',
+      passwordInput: '',
+      password: null,
       thePassword: 'Doggy_is_the_password',
       error: false,
+      passwordError: '',
     };
   },
   created() {},
@@ -128,6 +130,9 @@ export default {
         this.error = false
       }
     },
+    passwordInput() {
+      this.passwordError = false;
+    }
   },
   components: {
     DogImage,
@@ -135,10 +140,11 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+
 .warning {
   color: red;
 }
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
 
 </style>
