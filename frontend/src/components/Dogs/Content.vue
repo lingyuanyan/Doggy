@@ -57,7 +57,7 @@ export default {
       doggy_list:[],
       passwordInput: '',
       password: null,
-      thePassword: 'Doggy_is_the_password',
+      thePassword: 'Doggy_isnt_the_password',
       error: false,
       passwordError: '',
     };
