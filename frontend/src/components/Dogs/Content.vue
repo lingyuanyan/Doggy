@@ -14,16 +14,15 @@
       </div>
       <details>
         <summary>Upload Data</summary>
-        <div v-show="password !== thePassword">
-          <p v-show="password !== null" class="warning">The password you entered was incorrect</p>
-          <form id="password" @submit.prevent="CheckPassword">
+        <div v-show="!passwordCheck">
+          <form id="password" @submit.prevent="passwordCompare()">
             <label for="password">Enter the Password</label>
             <input type="text" id="password" name="pasword" placeholder="password" v-model="passwordInput"><br>
             <input type="submit">
           </form>
         </div>
         <p v-show="error == true" class="warning">One of the required areas are not filled, please remember to fill in all the textboxes</p>
-        <div v-show="password == thePassword">
+        <div v-show="passwordCheck">
         <form class="imageAdding" @submit.prevent="submitForm">
           <label for="name">Enter Name</label>
           <input type="text" id="name" name="name" v-model.trim="dogName"><br>
@@ -45,6 +44,7 @@
 import axios from 'axios'; // at the start of your <script> tag, before you "export default ..."
 import LabelImageInput from "./ImageUpload.vue"
 import DogImage from "./DogImage.vue";
+
 export default {
   name: "Content",
   data() {
@@ -56,10 +56,10 @@ export default {
       uploaded_image: require('@/assets/upload.png'),
       doggy_list:[],
       passwordInput: '',
-      password: null,
-      thePassword: 'Doggy_isnt_the_password',
+      passwordCheck: false,
+      passwordHash: -26933465,
       error: false,
-      passwordError: '',
+      passwordError: false,
     };
   },
   created() {},
@@ -105,9 +105,14 @@ export default {
     async load() {
         axios.get('/api/doggies/').then((response)=>(this.doggy_list = response.data.results)).catch((error)=>(console.log(error)))
     },
-    async CheckPassword() {
-      this.password = this.passwordInput;
+    passwordCompare() {
+      let inputHash = this.passwordInput.hashCode();
+      console.log('UserInput');
+      console.log(inputHash);
+      this.passwordCheck = (inputHash == this.passwordHash);
+      console.log(this.passwordCheck)
     }
+
   },
   watch: {
     dogDes() {
