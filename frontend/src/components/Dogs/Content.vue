@@ -21,18 +21,18 @@
             <input type="submit" @click="CheckPassword">
           </form>
         </div>
+        <p v-if="error == true" class="warning">One of the required areas are not filled, please remember to fill in all the textboxes</p>
         <div v-show="password == thePassword">
         <form class="imageAdding" @submit.prevent="submitForm">
           <label for="name">Enter Name</label>
-          <input type="text" id="name" name="name" v-model="dogName"><br>
+          <input type="text" id="name" name="name" v-model.trim="dogName"><br>
           <label for="des">Enter Description</label>
-          <input type="textarea" id="des" name="des" v-model="dogDes"><br>
+          <input type="textarea" id="des" name="des" v-model.trim="dogDes"><br>
           <label for="caption">Enter caption</label>
-          <input type="text" id="caption" name="caption" v-model="dogCaption"><br>
+          <input type="text" id="caption" name="caption" v-model.trim="dogCaption"><br>
           <LabelImageInput :label="upload_label" v-model="uploaded_image"></LabelImageInput>
           <input type="submit">
         </form>
-        <button @click="load">load data</button>
       </div>
     </details>
 
@@ -48,15 +48,16 @@ export default {
   name: "Content",
   data() {
     return {
-      dogName: '',
-      dogDes: '',
-      dogCaption: '',
+      dogName: null,
+      dogDes: null,
+      dogCaption: null,
       upload_label: 'uplaod_image',
       uploaded_image: require('@/assets/upload.png'),
       doggy_list:[],
       passwordInput:'',
       password: '',
       thePassword: 'Doggy_is_the_password',
+      error: false,
     };
   },
   created() {},
@@ -64,41 +65,69 @@ export default {
     this.load();
   },
   methods: {
-    async submitForm() {
-      console.log('Uploaded Image:');
-      console.log(this.uploaded_image.trim());
-      console.log('Uploaded Name:');
-      console.log(this.dogName.trim());
-      console.log('Uploaded Description:');
-      console.log(this.dogDes.trim());
-      console.log('Uploaded Caption:');
-      console.log(this.dogCaption.trim());
-      axios.post('http://127.0.0.1:8000/api/doggies/', {
-        name: this.dogName,
-        des: this.dogDes,
-        caption: this.dogCaption,
-        pic : this.uploaded_image,
-      }).then(()=>(this.load())).catch(
-        (error)=>(console.log(error)),
-        //this.dogName='',
-        //this.dogDes='',
-        //this.dogCaption='',
-        //this.uploaded_image= null,
-      );
-
+    requiredFields() {
+      return this.uploaded_image !== require('@/assets/upload.png') &&
+      this.uploaded_image !== null &&
+      this.dogName !== null &&
+      this.dogDes !== null &&
+      this.dogCaption !== null;
     },
+    async submitForm() {
+      if (this.requiredFields()) {
+        console.log('Uploaded Image:');
+        console.log(this.uploaded_image);
+        console.log('Uploaded Name:');
+        console.log(this.dogName);
+        console.log('Uploaded Description:');
+        console.log(this.dogDes);
+        console.log('Uploaded Caption:');
+        console.log(this.dogCaption);
+        axios.post('/api/doggies/', {
+          name: this.dogName,
+          des: this.dogDes,
+          caption: this.dogCaption,
+          pic : this.uploaded_image,
+        }).then(()=>(this.load())).catch(
+          (error)=>(console.log(error)),
+          this.dogName=null,
+          this.dogDes=null,
+          this.dogCaption=null,
+          this.uploaded_image= require('@/assets/upload.png'),
+        );
+      }
+      else {
+        this.error = true;
+      }
+    },
+
     async load() {
-      axios.get(
-        'http://127.0.0.1:8000/api/doggies/'
-      ).then(
-        (response)=>(this.doggy_list = response.data.results)
-      ).catch(
-        (error)=>(console.log(error))
-      )
+        axios.get('/api/doggies/').then((response)=>(this.doggy_list = response.data.results)).catch((error)=>(console.log(error)))
     },
     async CheckPassword() {
       this.password = this.passwordInput;
     }
+  },
+  watch: {
+    dogDes() {
+      if (this.requiredFields()) {
+        this.error = false
+      }
+    },
+    dogName() {
+      if (this.requiredFields()) {
+        this.error = false
+      }
+    },
+    dogCaption() {
+      if (this.requiredFields()) {
+        this.error = false
+      }
+    },
+    uploaded_image() {
+      if (this.requiredFields()) {
+        this.error = false
+      }
+    },
   },
   components: {
     DogImage,
@@ -106,6 +135,9 @@ export default {
   },
 };
 </script>
+.warning {
+  color: red;
+}
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 

@@ -1,7 +1,7 @@
 <template>
   <div id="banner">
     <img src="../../assets/logo.png" alt="logo" class="logo" />
-    <h1>Welcome to Doggy</h1>
+    <h2>Welcome to Doggy</h2>
     <div class="nav">
     <nav>
       <router-link to="/Dogs" class="col-6-xs">Dogs</router-link>
