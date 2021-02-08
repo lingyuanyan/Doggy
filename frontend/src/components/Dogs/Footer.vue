@@ -2,6 +2,7 @@
   <div id="footer">
     <hr>
     <h2>Footer</h2>
+    <p>See the dogs above</p>
   </div>
 </template>
 

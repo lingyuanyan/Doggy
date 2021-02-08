@@ -65,10 +65,9 @@ export default {
 
   }
   .nav {
-    border: solid black 1px;
     width: 75%;
     text-align: center;
-    margin-right: 25%;
     margin-left: 25%;
+    margin-right: 25%;
   }
 </style>
