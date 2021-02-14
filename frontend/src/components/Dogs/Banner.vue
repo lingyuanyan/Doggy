@@ -2,13 +2,12 @@
   <div id="banner">
     <img src="../../assets/logo.png" alt="logo" class="logo" />
     <h2>Welcome to Doggy</h2>
-    <div class="nav">
     <nav>
-      <router-link to="/Dogs" class="col-6-xs">Dogs</router-link>
-      <router-link to="/AboutUs" class="col-6-xs">About us</router-link>
+        <router-link to="/Dogs" class="align-middle links">Dogs</router-link>
+        <router-link to="/AboutUs" class="align-middle links">About us</router-link>
     </nav>
-    </div>
-    <hr>
+    
+
   </div>
 </template>
 
@@ -28,47 +27,38 @@ export default {
     display: inline-block;
   }
 
-  .logo {
+  .logo{
+    width: 10px;
+    min-width: 50px;
+    max-width: 100px;
+    float: left;
     margin-left: 15px;
   }
 
-  .doggy_logo {
-    margin-right: 15px;
+   a:hover, a:active, .link-wrapper:hover, a.router-link-exact-active{
+    background-color: #1e90ff;
+    text-decoration: none;
+    border-top: 2px solid white;
+    padding: 11px;
   }
 
-  .logo, .doggy_logo {
-    width: 10%;
-    min-width: 50px;
-    max-width: 100px;
-  }
 
-  a{
-
-  }
-  a:hover, a:active, a.router-link-active {
-
-  }
   nav  {
     border: solid black 1px;
-    width: 75%;
-    left: 25%;
-  }
-  a {
-    margin: auto;
-    text-decoration: none;
-    border: solid black 1px;
-    padding: 4px;
-    width: 50vw;
-  }
-  #banner {
-    border: solid black 1px
+    background-color: #89cff0;
+    height: 50px;
+   }
 
-  }
-  .nav {
-    border: solid black 1px;
-    width: 75%;
-    text-align: center;
-    margin-right: 25%;
-    margin-left: 25%;
+   a {
+     text-decoration: none;
+     color: black;
+     margin-left: 1rem;
+     display: inline-block;
+     color: black;
+     padding: 10px;
+   }
+
+  .link-wrapper {
+
   }
 </style>

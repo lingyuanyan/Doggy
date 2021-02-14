@@ -1,7 +1,7 @@
 <template>
   <div id="footer">
     <hr>
-    <h2>Footer</h2>
+    <p>made by the group turtlemaster</p>
   </div>
 </template>
 
