@@ -10,7 +10,6 @@
           :path="doggy.pic"
           :caption="doggy.caption"
           :des="doggy.des"
-          :click="selectDog($event)"
         >
         </DogImage>
       </div>
@@ -36,9 +35,6 @@ export default {
   methods: {
     async load() {
       axios.get('/api/doggies/').then((response)=>(this.doggy_list = response.data.results)).catch((error)=>(console.log(error)))
-    },
-
-    selectDog() {
     },
   },
   components: {

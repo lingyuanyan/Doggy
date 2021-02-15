@@ -24,13 +24,30 @@
         <input type="submit">
       </form>
     </div>
+    <div class="">
+      <h4>Delete Info</h4>
+      <DogImage v-if="doggy !== null"
+        :id="doggy.id"
+        :name="doggy.name"
+        class="col-sm-6 col-xs-12 col-md-4 col-lg-3"
+        :path="doggy.pic"
+        :caption="doggy.caption"
+        :des="doggy.des"
+      >
+      </DogImage>
+      <form id="Delete" @submit.prevent="deleteDog()">
+        <label for="delete">Enter the dog's id</label>
+        <input type="number" id="id" name="id" v-model="doggyId"><br>
+        <input type="submit">
+      </form>
+    </div>
   </div>
 </template>
 
 <script>
   import axios from 'axios'; // at the start of your <script> tag, before you "export default ..."
   import LabelImageInput from "../Dogs/ImageUpload.vue"
-
+  import DogImage from "../Dogs/DogImage.vue";
 
   export default {
     name: "Content",
@@ -46,11 +63,12 @@
         passwordHash: -26933465,
         error: false,
         passwordError: false,
+        doggyId: null,
+        doggy: null,
       };
     },
     created() {},
     mounted() {
-      this.load();
     },
     methods: {
       requiredFields() {
@@ -75,7 +93,7 @@
             des: this.dogDes,
             caption: this.dogCaption,
             pic : this.uploaded_image,
-          }).then(()=>(this.load())).catch(
+          }).then().catch(
             (error)=>(console.log(error)),
             this.dogName=null,
             this.dogDes=null,
@@ -87,11 +105,6 @@
           this.error = true;
         }
       },
-
-      async load() {
-        axios.get('/api/doggies/').then((response)=>(this.doggy_list = response.data.results)).catch((error)=>(console.log(error)))
-      },
-
       passwordCompare() {
         let inputHash = this.passwordInput.hashCode();
         console.log('UserInput');
@@ -99,11 +112,18 @@
         this.passwordCheck = (inputHash == this.passwordHash);
         console.log(this.passwordCheck)
       },
-      selectDog() {
+      async deleteDog(doggyId) {
+
+        let url = "/api/doggies/" + doggyId + "/";
+        axios.delete(url)
+        .then((response)=>{response;})
+        .catch((error)=>(console.log(error)))
       },
-      async delete(deleteId) {
-        let url = "/api/doggies/" + deleteId + "/"
-        axios.delete(url).catch((error)=>(console.log(error)))
+      async fetchDogId(doggyId) {
+        let url = "/api/doggies/" + doggyId + "/";
+        axios.get(url)
+        .then((response)=>{this.doggy = response.data})
+        .catch((error)=>(console.log(error)))
       }
 
     },
@@ -130,10 +150,15 @@
       },
       passwordInput() {
         this.passwordError = false;
-      }
+      },
+      doggyId(value) {
+        console.log('doggyid triggered, id =' + value)
+        this.fetchDogId(value);
+      },
     },
     components: {
       LabelImageInput,
+      DogImage,
     },
   };
 </script>

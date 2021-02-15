@@ -3,10 +3,12 @@
     <div class="row">
       <div class="col-sm-6">
           <img class="img row-sm-6" :src="path"/>
-          <p class="caption row-sm-6">{{ caption }}</p><br>
+          <p class="caption row-sm-6">{{ caption }}</p>
       </div>
       <div class="col-sm-6">
-        <h3 class="name row-sm-6">{{ name }}</h3><br>
+        <h3 class="name row-sm-6">{{ name }}</h3>
+        <span>{{ id }}</span>
+        <br>
         <p class="des row-sm-6">{{ des }}</p><br>
       </div>
     </div>
@@ -30,6 +32,10 @@ export default {
       type: String,
       required: true,
     },
+    id: {
+      type: Number,
+      required: true,
+    }
   },
 };
 </script>
