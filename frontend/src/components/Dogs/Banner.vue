@@ -3,8 +3,7 @@
     <img src="../../assets/logo.png" alt="logo" class="logo" />
     <h2>Welcome to Doggy</h2>
     <nav>
-        <router-link to="/Dogs" class="align-middle links">Dogs</router-link>
-        <router-link to="/AboutUs" class="align-middle links">About us</router-link>
+        <router-link to="/Dogs" class="align-middle links">Dogs</router-link> <router-link to="/AboutUs" class="align-middle links">About us</router-link> <router-link to="/Admins" class="align-middle links">Admins</router-link>
     </nav>
 
 
@@ -40,7 +39,6 @@ export default {
     text-decoration: none;
     border-top: 2px solid white;
     padding: 11px;
-    width:45%
   }
 
 
@@ -53,14 +51,13 @@ export default {
    a {
      text-decoration: none;
      color: black;
-     margin-left: 1rem;
      display: inline-block;
      color: black;
      background-color: #89cff0;
      padding: 10px;
      padding-left: 0px;
      padding-right: 0px;
-     width:45%
+     width:30%
    }
 
   .nav {

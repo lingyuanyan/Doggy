@@ -7,7 +7,8 @@ class DoggyInfoSerializer(serializers.ModelSerializer):
     class Meta:
         model = DoggyInfo
         fields = (
-        'name',
+                 'id',
+                 'name',
                  'pic',
                  'caption',
                  'des'

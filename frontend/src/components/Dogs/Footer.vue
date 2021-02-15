@@ -1,13 +1,8 @@
 <template>
   <div id="footer">
     <hr>
-    <p>made by the group turtlemaster</p>
     <h2>Footer</h2>
-    <div class="text">
-      <p>See the dogs above, if it does not have the dogs, click on dogs in the header </p>
-      <hr>
-      <p>Thanks for looking at the dogs</p>
-    </div>
+    <p>made by the group turtlemaster</p>
     <div class="others">
       <p>Other sites: </p>
     <ul>

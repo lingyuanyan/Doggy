@@ -4,152 +4,48 @@
     <div class="container">
       <div  class="row">
         <DogImage v-for="(doggy, i) in doggy_list" :key="i"
+          :id="doggy.id"
           :name="doggy.name"
           class="col-sm-6 col-xs-12 col-md-4 col-lg-3"
           :path="doggy.pic"
           :caption="doggy.caption"
           :des="doggy.des"
+          :click="selectDog($event)"
         >
         </DogImage>
       </div>
-      <details>
-        <summary>Upload Data</summary>
-        <div v-show="!passwordCheck">
-          <form id="password" @submit.prevent="passwordCompare()">
-            <label for="password">Enter the Password</label>
-            <input type="text" id="password" name="pasword" placeholder="password" v-model="passwordInput"><br>
-            <input type="submit">
-          </form>
-        </div>
-        <p v-show="error == true" class="warning">One of the required areas are not filled, please remember to fill in all the textboxes</p>
-        <div v-show="passwordCheck">
-        <form class="imageAdding" @submit.prevent="submitForm">
-          <label for="name">Enter Name</label>
-          <input type="text" id="name" name="name" v-model.trim="dogName"><br>
-          <label for="des">Enter Description</label>
-          <input type="textarea" id="des" name="des" v-model.trim="dogDes"><br>
-          <label for="caption">Enter caption</label>
-          <input type="text" id="caption" name="caption" v-model.trim="dogCaption"><br>
-          <LabelImageInput :label="upload_label" v-model="uploaded_image"></LabelImageInput>
-          <input type="submit">
-        </form>
-      </div>
-    </details>
-
     </div>
   </div>
 </template>
 
 <script>
-import axios from 'axios'; // at the start of your <script> tag, before you "export default ..."
-import LabelImageInput from "./ImageUpload.vue"
+import axios from 'axios';
 import DogImage from "./DogImage.vue";
 
 export default {
   name: "Content",
   data() {
     return {
-      dogName: null,
-      dogDes: null,
-      dogCaption: null,
-      upload_label: 'uplaod_image',
-      uploaded_image: require('@/assets/upload.png'),
-      doggy_list:[],
-      passwordInput: '',
-      passwordCheck: false,
-      passwordHash: -26933465,
-      error: false,
-      passwordError: false,
-    };
+      doggy_list: [],
+    }
   },
   created() {},
   mounted() {
     this.load();
   },
   methods: {
-    requiredFields() {
-      return this.uploaded_image !== require('@/assets/upload.png') &&
-      this.uploaded_image !== null &&
-      this.dogName !== null &&
-      this.dogDes !== null &&
-      this.dogCaption !== null;
-    },
-    async submitForm() {
-      if (this.requiredFields()) {
-        console.log('Uploaded Image:');
-        console.log(this.uploaded_image);
-        console.log('Uploaded Name:');
-        console.log(this.dogName);
-        console.log('Uploaded Description:');
-        console.log(this.dogDes);
-        console.log('Uploaded Caption:');
-        console.log(this.dogCaption);
-        axios.post('/api/doggies/', {
-          name: this.dogName,
-          des: this.dogDes,
-          caption: this.dogCaption,
-          pic : this.uploaded_image,
-        }).then(()=>(this.load())).catch(
-          (error)=>(console.log(error)),
-          this.dogName=null,
-          this.dogDes=null,
-          this.dogCaption=null,
-          this.uploaded_image= require('@/assets/upload.png'),
-        );
-      }
-      else {
-        this.error = true;
-      }
-    },
-
     async load() {
-        axios.get('/api/doggies/').then((response)=>(this.doggy_list = response.data.results)).catch((error)=>(console.log(error)))
+      axios.get('/api/doggies/').then((response)=>(this.doggy_list = response.data.results)).catch((error)=>(console.log(error)))
     },
-    passwordCompare() {
-      let inputHash = this.passwordInput.hashCode();
-      console.log('UserInput');
-      console.log(inputHash);
-      this.passwordCheck = (inputHash == this.passwordHash);
-      console.log(this.passwordCheck)
-    }
 
-  },
-  watch: {
-    dogDes() {
-      if (this.requiredFields()) {
-        this.error = false
-      }
+    selectDog() {
     },
-    dogName() {
-      if (this.requiredFields()) {
-        this.error = false
-      }
-    },
-    dogCaption() {
-      if (this.requiredFields()) {
-        this.error = false
-      }
-    },
-    uploaded_image() {
-      if (this.requiredFields()) {
-        this.error = false
-      }
-    },
-    passwordInput() {
-      this.passwordError = false;
-    }
   },
   components: {
     DogImage,
-    LabelImageInput
   },
 };
 </script>
 
 <style scoped>
-
-.warning {
-  color: red;
-}
-
 </style>

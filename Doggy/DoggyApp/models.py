@@ -10,6 +10,7 @@ from django.db import models
 #Create your models here
 
 class DoggyInfo(models.Model):
+    id = models.AutoField(primary_key=True)
     name = models.TextField(blank=True, null=True)
     pic = models.TextField(blank=True, null=True)
     caption = models.TextField(blank=True, null=True)
