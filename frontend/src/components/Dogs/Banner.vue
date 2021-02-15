@@ -35,11 +35,12 @@ export default {
     margin-left: 15px;
   }
 
-   a:hover, a:active, .link-wrapper:hover, a.router-link-exact-active{
+   a:hover, a:active, a.router-link-exact-active{
     background-color: #1e90ff;
     text-decoration: none;
     border-top: 2px solid white;
     padding: 11px;
+    width:45%
   }
 
 
@@ -55,7 +56,11 @@ export default {
      margin-left: 1rem;
      display: inline-block;
      color: black;
+     background-color: #89cff0;
      padding: 10px;
+     padding-left: 0px;
+     padding-right: 0px;
+     width:45%
    }
 
   .nav {
