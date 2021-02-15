@@ -6,7 +6,7 @@
         <router-link to="/Dogs" class="align-middle links">Dogs</router-link>
         <router-link to="/AboutUs" class="align-middle links">About us</router-link>
     </nav>
-    
+
 
   </div>
 </template>
@@ -58,16 +58,10 @@ export default {
      padding: 10px;
    }
 
-  .link-wrapper {
-
-<<<<<<< HEAD
-=======
-  }
   .nav {
     width: 75%;
     text-align: center;
     margin-left: 25%;
     margin-right: 25%;
->>>>>>> f5f2ba946d65e9260e0eb7e14e5e772aaa23ddd4
   }
 </style>
