@@ -11,13 +11,13 @@
 <script>
 // import Banner from './components/Banner.vue'
 // import Footer from './components/Footer.vue'
-//import Content from './components/Content.vue'
+// import Content from './components/Content.vue'
 
 export default {
   name: 'App',
 
   components: {
-   // Banner,
+  //  Banner,
   //  Content
   //  Footer
   }
