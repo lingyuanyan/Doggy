@@ -18,7 +18,7 @@
 
 <script>
 export default {
-  name: "LabelImageInput",
+  name: "ImageUpload",
   props: {
     label: null,
     modelValue: null,
