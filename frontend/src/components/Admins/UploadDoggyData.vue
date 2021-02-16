@@ -1,6 +1,13 @@
-
 <template>
   <div>
+    <DogImage
+      :id="1"
+      :name="dogName"
+      :path="uploaded_image"
+      :caption="dogCaption"
+      :des="dogDes"
+    />
+    <hr>
     <p v-show="error == true" class="warning">One of the required areas are not filled, please remember to fill in all the textboxes</p>
     <h4>Upload Data</h4>
     <form class="imageAdding" @submit.prevent="submitForm">
@@ -19,14 +26,15 @@
 <script>
   import axios from 'axios';
   import ImageUpload from "../Dogs/ImageUpload.vue";
+  import DogImage from "../Dogs/DogImage.vue";
 
   export default {
     name: "Content",
     data() {
       return {
-        dogName: null,
-        dogDes: null,
-        dogCaption: null,
+        dogName: '',
+        dogDes: '',
+        dogCaption: '',
         upload_label: 'uplaod_image',
         uploaded_image: require('@/assets/upload.png'),
         error: false,
@@ -60,10 +68,10 @@
             pic : this.uploaded_image,
           }).then().catch(
             (error)=>(console.log(error)),
-            this.dogName=null,
-            this.dogDes=null,
-            this.dogCaption=null,
-            this.uploaded_image= require('@/assets/upload.png'),
+            //this.dogName = null,
+            //this.dogDes = null,
+            //this.dogCaption = null,
+            //this.uploaded_image = require('@/assets/upload.png'),
           );
         }
         else {
@@ -98,7 +106,7 @@
     },
     components: {
       ImageUpload,
-//    DogImage,
+      DogImage,
     },
   };
 </script>

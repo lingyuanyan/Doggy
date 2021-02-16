@@ -9,6 +9,7 @@
       :caption="doggy.caption"
       :des="doggy.des"
     >
+    <hr>
     </DogImage>
     <form id="Delete" @submit.prevent="deleteDog()">
       <label for="delete">Enter the dog's id</label>
@@ -34,23 +35,28 @@ export default {
   mounted() {
   },
   methods: {
-    async deleteDog(doggyId) {
-      let url = "/api/doggies/" + doggyId + "/";
+    async deleteDog() {
+      let url = "/api/doggies/" + this.doggyId + "/";
       axios.delete(url)
       .then((response)=>{response;})
       .catch((error)=>(console.log(error)))
+      console.log('url:' + url + ', deleted')
+      this.doggyId = null;
     },
     async fetchDogId(doggyId) {
+
       let url = "/api/doggies/" + doggyId + "/";
       axios.get(url)
       .then((response)=>{this.doggy = response.data})
       .catch((error)=>(console.log(error)))
+      console.log('fetchDogId triggered successfully, url is ' + url)
     }
 
   },
   watch: {
     doggyId(value) {
-      console.log('doggyid triggered, id =' + value)
+      console.log('doggyid triggered, id =' + value);
+      console.log('url: ' + "/api/doggies/" + value + "/")
       this.fetchDogId(value);
     },
   },
