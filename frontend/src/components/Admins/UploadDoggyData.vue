@@ -112,4 +112,7 @@
 </script>
 
 <style lang="css" scoped>
+.warning {
+  color: red;
+}
 </style>

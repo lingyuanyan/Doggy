@@ -36,6 +36,10 @@ export default {
   },
   methods: {
     async deleteDog() {
+      if (this.doggyId == null || this.doggyId == undefined) {
+        console.log('error');
+        return
+      }
       let url = "/api/doggies/" + this.doggyId + "/";
       axios.delete(url)
       .then((response)=>{response;})
@@ -44,7 +48,10 @@ export default {
       this.doggyId = null;
     },
     async fetchDogId(doggyId) {
-
+      if (doggyId == null || doggyId == undefined) {
+        console.log('error');
+        return
+      }
       let url = "/api/doggies/" + doggyId + "/";
       axios.get(url)
       .then((response)=>{this.doggy = response.data})
@@ -68,4 +75,5 @@ export default {
 </script>
 
 <style lang="css" scoped>
+
 </style>
