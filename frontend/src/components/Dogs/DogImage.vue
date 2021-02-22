@@ -1,5 +1,5 @@
 <template>
-  <div id="doginfo" class="container  col-xs-12 col-sm-6 col-md-4 col-lg-3">
+  <div @click="onClicked()" id="doginfo" class="container col-xs-12 col-sm-6 col-md-4 col-lg-3" >
     <div class="row">
       <div class="col-sm-6">
           <img class="img row-sm-6" :src="path"/>
@@ -42,6 +42,12 @@ export default {
       required: true,
     }
   },
+  methods: {
+    onClicked() {
+      this.$emit('clicked', this.id)
+    }
+  }
+
 };
 </script>
 
