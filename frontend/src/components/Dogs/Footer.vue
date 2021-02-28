@@ -8,6 +8,7 @@
     <ul>
       <li><a href="http://covidhub.io" target="_blank">covidhub.io</a></li>
     </ul>-->
+    <p>If there is a dog you would like to adopt, please contact </p>
     </div>
   </div>
 </template>

@@ -1,10 +1,12 @@
 <template>
-  <div class="">
+  <div class="app">
+    
     <main>
       <router-view name="header"></router-view>
       <router-view></router-view>
       <router-view name="footer"></router-view>
     </main>
+
   </div>
 </template>
 
@@ -34,6 +36,6 @@ export default {
   margin-top: 60px;
   height: 100%;
   width: 100%;
-  top: auto;
+  top: 0px;
 }
 </style>

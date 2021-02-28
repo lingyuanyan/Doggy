@@ -7,7 +7,6 @@
           <DogImage v-for="(doggy, i) in doggy_list" :key="i"
             :id="doggy.id"
             :name="doggy.name"
-            class="col-xs-12"
             :path="doggy.pic"
             :caption="doggy.caption"
             :des="doggy.des"
