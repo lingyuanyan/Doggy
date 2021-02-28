@@ -13,9 +13,6 @@
         <svg width="40" height="40">
           <a class="contact" href=""><font-awesome-icon :icon="['fas', 'envelope-square']"/></a>
         </svg>
-
-
-
       </div>
     </div>
     <nav class="links">
@@ -24,17 +21,25 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: "Banner",
-}
+  <script>
+  export default {
+    name: "Banner",
+    data() {
+      return {
+        english: true,
+      }
+    },
+    created() {},
+    mounted() {},
+    methods: {
+    },
+  }
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
   .contacts {
-
-
   }
   .contact {
     text-decoration: none;
@@ -49,9 +54,7 @@ export default {
   }
 
   .logo{
-    width: 10%;
-    min-width: 50px;
-    max-width: 100px;
+    width: 50px;
     float: left;
     margin-left: 15px;
   }

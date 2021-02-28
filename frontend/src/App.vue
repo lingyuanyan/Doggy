@@ -1,15 +1,14 @@
 <template>
   <div class="app">
-    
     <main>
       <router-view name="header"></router-view>
+      <p class="language" @click="changeLanguage()" v-show="english"> English </p>
+      <p class="language" @click="changeLanguage()" v-show="!english">Chinese</p>
       <router-view></router-view>
       <router-view name="footer"></router-view>
     </main>
-
   </div>
 </template>
-
 <script>
 // import Banner from './components/Banner.vue'
 // import Footer from './components/Footer.vue'
@@ -17,7 +16,18 @@
 
 export default {
   name: 'App',
-
+  data() {
+    return {
+      english: true,
+    }
+  },
+  created() {},
+  mounted() {},
+  methods: {
+    changeLanguage() {
+      this.english = !this.english;
+    }
+  },
   components: {
   //  Banner,
   //  Content
@@ -37,5 +47,10 @@ export default {
   height: 100%;
   width: 100%;
   top: 0px;
+}
+.language{
+  float:right;
+  border: 1px solid black;
+  background-color: #d3d3d3;
 }
 </style>
