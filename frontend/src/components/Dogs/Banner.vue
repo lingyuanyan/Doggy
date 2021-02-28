@@ -4,9 +4,18 @@
       <img src="../../assets/logo.png" alt="logo" class="logo"/>
       <h2>Welcome to FurFriend Rescue</h2>
       <div class="contacts d-flex justify-content-evenly">
-        <a class="contact" href=""><font-awesome-icon :icon="['fab', 'facebook-square']"/></a>
-        <a class="contact" href=""><i class="fas fa-envelope-square"></i></a>
-        <a class="contact" href=""><i class="fab fa-instagram-square"/></a>
+        <svg width="40" height="40">
+          <a class="contact" href=""><font-awesome-icon :icon="['fab', 'facebook-square']"/></a>
+        </svg>
+        <svg width="40" height="40">
+          <a class="contact" href=""><font-awesome-icon :icon="['fab', 'instagram-square']"/></a>
+        </svg>
+        <svg width="40" height="40">
+          <a class="contact" href=""><font-awesome-icon :icon="['fas', 'envelope-square']"/></a>
+        </svg>
+
+
+
       </div>
     </div>
     <nav class="links">
@@ -24,7 +33,8 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
   .contacts {
-    border: 1px solid #89cff0;
+
+
   }
   .contact {
     text-decoration: none;
@@ -32,9 +42,7 @@ export default {
   #banner {
     text-align: center;
   }
-  i {
-    color: #89cff0;
-  }
+
   h1 {
     margin-top: 0;
     display: inline-block;
