@@ -2,8 +2,8 @@
   <div class="app">
     <main>
       <router-view name="header"></router-view>
-      <p class="language" @click="changeLanguage()" v-show="english"> English </p>
-      <p class="language" @click="changeLanguage()" v-show="!english">Chinese</p>
+  <!--    <p class="language" @click="changeLanguage()" v-show="english"> English </p>
+      <p class="language" @click="changeLanguage()" v-show="!english">Chinese</p>-->
       <router-view></router-view>
       <router-view name="footer"></router-view>
     </main>
