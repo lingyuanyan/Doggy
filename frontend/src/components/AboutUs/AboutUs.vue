@@ -127,7 +127,8 @@ h3 {
 }
 .language{
   float:right;
-  border: 1px solid black;
+  border: 1px solid #000;
   background-color: #d3d3d3;
+  cursor: pointer;
 }
 </style>

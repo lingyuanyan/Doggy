@@ -9,12 +9,7 @@
       <p>Other sites: </p>
     <ul>
       <li><a href="http://covidhub.io" target="_blank">covidhub.io</a></li>
-<<<<<<< HEAD
     </ul>
-=======
-    </ul>-->
-    <p>If there is a dog you would like to adopt, please contact </p>
->>>>>>> 5aa1767174b7977ec9aa644eb6857f556559a540
     </div>
   </div>
 </template>
