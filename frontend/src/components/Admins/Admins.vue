@@ -1,5 +1,5 @@
 <template>
-  <div class="">
+  <div>
     <h1>Admins</h1>
 
     <div v-show="!passwordCheck">
