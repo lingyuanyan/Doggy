@@ -15,8 +15,6 @@
       <input type="text" id="name" name="name" v-model.trim="dogName"><br>
       <label for="des">Enter Description</label>
       <input type="textarea" id="des" name="des" v-model.trim="dogDes"><br>
-      <label for="caption">Enter caption</label>
-      <input type="text" id="caption" name="caption" v-model.trim="dogCaption"><br>
       <ImageUpload :label="upload_label" v-model="uploaded_image"></ImageUpload>
       <input type="submit">
     </form>

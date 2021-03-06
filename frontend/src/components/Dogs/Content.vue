@@ -1,22 +1,14 @@
 <template>
   <div id="content">
-    <h2>Content</h2>
-    <div class="container">
-      <div  class="row">
-        <div class="">
-          <DogImage v-for="(doggy, i) in doggy_list" :key="i"
-            :id="doggy.id"
-            :name="doggy.name"
-            :path="doggy.pic"
-            :caption="doggy.caption"
-            :des="doggy.des"
-            @clicked="clickedDoggy"
-          >
-          </DogImage>
-        </div>
-      </div>
-    </div>
-
+    <DogImage v-for="(doggy, i) in doggy_list" :key="i"
+      :id="doggy.id"
+      :name="doggy.name"
+      :path="doggy.pic"
+      :caption="doggy.caption"
+      :des="doggy.des"
+      @clicked="clickedDoggy"
+      class="dog"
+    ></DogImage>
     <doggy-modal ref="doggyModal"  />
   </div>
 </template>
@@ -66,4 +58,37 @@ export default {
 </script>
 
 <style scoped>
+#content {
+  width: 100vw;
+}
+  @media only screen and (max-width: 576px) {
+    .dog {
+      width: 100vw;
+      display: inline-block;
+    }
+  }
+  @media only screen and (min-width: 575px) {
+    .dog {
+      width: 100vw;
+      display: inline-block;
+    }
+  }
+  @media only screen and (min-width: 767px) {
+    .dog {
+      width: 45vw;
+      display: inline-block;
+    }
+  }
+  @media only screen and (min-width: 991px) {
+    .dog {
+      width: 30vw;
+      display: inline-block;
+    }
+  }
+  @media only screen and (min-width: 1200px) {
+    .dog {
+      width: 20vw;
+      display: inline-block;
+    }
+  }
 </style>

@@ -1,20 +1,15 @@
 <template>
-  <div @click="onClicked()" id="doginfo" class="container col-xs-12 col-sm-6 col-md-4 col-lg-3" >
-    <div class="row">
-      <div class="col-sm-6">
-          <img class="img row-sm-6" :src="path"/>
-          <p class="caption row-sm-6">{{ caption }}</p>
+  <div @click="onClicked()" id="doginfo">
+    <div class=" d-flex justify-content-evenly">
+      <div class=" d-flex justify-content-evenly">
+        <img class="img row-sm-6" :src="path"/>
       </div>
-      <div class=" col-xs-12 col-sm-6">
-        <br>
-        <div class="names">
+      <div class="">
+        <div class=" d-flex justify-content-evenly">
           <h3 class="name col-xs-9">{{ name }}</h3>
           <span class="id col-xs-3">{{id}}</span>
         </div>
-        <br>
-        <div>
-          <p class="des row-sm-6">{{ des }}</p>
-        </div>
+        <p class="des row-sm-6">{{ des }}</p>
       </div>
     </div>
   </div>
@@ -57,6 +52,7 @@ export default {
   border: solid black 1px;
   border-radius: 15px;
   width: 33em;
+  margin: 15p;
 }
 img {
   height: 100px;

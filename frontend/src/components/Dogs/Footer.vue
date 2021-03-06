@@ -28,9 +28,9 @@ export default {
     text-align: justify;
   }
   #footer {
-    margin: 0 1vw 1vh;
     border: 1px solid #aaa;
     padding: 0;
+    width: 100vw;
   }
   h2 {
     background: hsl(200, 65%, 75%);
