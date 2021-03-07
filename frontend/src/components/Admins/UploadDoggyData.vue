@@ -1,6 +1,7 @@
 <template>
   <div>
     <DogImage
+    class="doggy"
       :id="1"
       :name="dogName"
       :path="uploaded_image"
@@ -112,5 +113,8 @@
 <style lang="css" scoped>
 .warning {
   color: red;
+}
+.dog{
+  text-align: center;
 }
 </style>

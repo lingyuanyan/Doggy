@@ -1,16 +1,17 @@
 <template>
   <div class="">
     <h4>Delete Info</h4>
-    <DogImage v-if="doggy !== null"
-      :id="doggy.id"
-      :name="doggy.name"
-      class="col-sm-6 col-xs-12 col-md-4 col-lg-3"
-      :path="doggy.pic"
-      :caption="doggy.caption"
-      :des="doggy.des"
-    >
+    <div class="doggy">
+      <DogImage v-if="doggy !== null"
+        :id="doggy.id"
+        :name="doggy.name"
+        class="col-sm-6 col-xs-12 col-md-4 col-lg-3"
+        :path="doggy.pic"
+        :caption="doggy.caption"
+        :des="doggy.des"
+      ></DogImage>
+    </div>
     <hr>
-    </DogImage>
     <form id="Delete" @submit.prevent="deleteDog()">
       <label for="delete">Enter the dog's id</label>
       <input type="number" id="id" name="id" v-model="doggyId"><br>
@@ -75,5 +76,7 @@ export default {
 </script>
 
 <style lang="css" scoped>
-
+  .dog{
+    text-align: center;
+  }
 </style>

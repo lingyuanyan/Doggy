@@ -1,6 +1,8 @@
 <template>
   <div id="footer">
     <h2>Footer</h2>
+    <p>Contacts:</p>
+    <p>Email: </p><a href="mailto:Imcffr2021@gmail.com">Imcffr2021@gmail.com</a>
     <!-- <hr /> -->
     <div class="text">
       <p>Made by the turtlemaster group</p>
