@@ -1,8 +1,11 @@
 <template>
   <div id="banner">
     <div class="d-flex justify-content-between">
-      <img src="../../assets/DoggyLogo.png" alt="" class="logo"/>
-      <h1>FurFriend Rescue</h1>
+      <div class="logos d-flex justify-content-evenly">
+        <img src="../../assets/DoggyLogo.png" class="logo"/>
+        <img src="../../assets/LittleMasterLogo.jpg" class="LMCLogo"/>
+      </div>
+      <h1>Fur Friend Rescue</h1>
       <div class="contacts d-flex justify-content-evenly">
         <svg width="40" height="40">
           <a class="contact" href=""><font-awesome-icon :icon="['fab', 'facebook-square']"/></a>
@@ -54,10 +57,26 @@
     display: inline-block;
 
   }
-
-  .logo{
-    width: 60px;
+  .logos {
+    margin: 0, 0, 0, 0;
     float: left;
+    height: 120px;
+    margin-left: 15px;
+  }
+  .logo{
+    margin: 0, 0, 0, 0;
+    width: 60px;;
+    height: 80px;
+    float: left;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    margin-top: 3px;
+  }
+  .LMCLogo{
+    width: 80px;
+    height: 80px;
+    float: left;
+    margin: 0, 0, 0, 0;
     margin-left: 15px;
     margin-bottom: 5px;
     margin-top: 3px;

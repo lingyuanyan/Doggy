@@ -1,10 +1,10 @@
 <template>
   <div class="">
-
+    <br>
     <p class="language" @click="changeLanguage()" v-show="!english">English</p>
     <p class="language" @click="changeLanguage()" v-show="english">Chinese</p>
     <div v-show="english" class="english">
-      <h1>About Us</h1>
+      <h3>About Us</h3>
       <p>“Fur Friend Rescue” is one of projects from a non-profit organization called "Little
   Masters Club". This organization has been established for more than seven years and
   has become a household name in Seattle's Chinese community. The goal of the Little

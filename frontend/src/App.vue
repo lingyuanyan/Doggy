@@ -2,17 +2,12 @@
   <div class="app">
     <main>
       <router-view name="header"></router-view>
-  <!--    <p class="language" @click="changeLanguage()" v-show="english"> English </p>
-      <p class="language" @click="changeLanguage()" v-show="!english">Chinese</p>-->
       <router-view></router-view>
       <router-view name="footer"></router-view>
     </main>
   </div>
 </template>
 <script>
-// import Banner from './components/Banner.vue'
-// import Footer from './components/Footer.vue'
-// import Content from './components/Content.vue'
 
 export default {
   name: 'App',
@@ -28,11 +23,6 @@ export default {
       this.english = !this.english;
     }
   },
-  components: {
-  //  Banner,
-  //  Content
-  //  Footer
-  }
 }
 </script>
 

@@ -1,5 +1,6 @@
 <template>
   <div id="content">
+    <br>
     <DogImage v-for="(doggy, i) in doggy_list" :key="i"
       :id="doggy.id"
       :name="doggy.name"
