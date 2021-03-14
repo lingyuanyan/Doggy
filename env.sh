@@ -21,7 +21,10 @@ pushd frontend
 npm install
 npm run build
 popd
+
+pushd Doggy
 python manage.py collectstatic
+popd
 
 sudo rm /etc/nginx/sites-enabled/django_nginx_doggy.conf
 sudo rm /etc/nginx/sites-available/django_nginx_doggy.conf
