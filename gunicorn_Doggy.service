@@ -1,0 +1,14 @@
+[Unit]
+Description=Doggy gunicorn daemon
+Requires=gunicorn_Doggy.socket
+After=network.target
+
+[Service]
+User=wwwadmin
+Group=wwwadmin
+WorkingDirectory=/home/wwwadmin/Doggy
+ExecStart=/home/wwwadmin/Doggy/venv_t/bin/gunicorn --access-logfile - --workers 3 --bind unix:/home/wwwadmin/Doggy/Doggy.sock Doggy.wsgi:application
+
+[Install]
+WantedBy=multi-user.target
+
