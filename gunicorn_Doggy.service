@@ -7,7 +7,7 @@ After=network.target
 User=wwwadmin
 Group=wwwadmin
 WorkingDirectory=/home/wwwadmin/Doggy
-ExecStart=/home/wwwadmin/Doggy/venv_t/bin/gunicorn --access-logfile - --workers 3 --bind unix:/home/wwwadmin/Doggy/Doggy.sock Doggy.wsgi:application
+ExecStart=/home/wwwadmin/Doggy/venv_t/bin/gunicorn --access-logfile - --workers 3 --bind unix:/home/wwwadmin/Doggy/Doggy.sock Doggy.Doggy.wsgi:application
 
 [Install]
 WantedBy=multi-user.target
