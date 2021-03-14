@@ -1,9 +1,10 @@
 <template>
   <div id="footer">
-    <h2>Footer</h2>
-    <p>Contacts:</p>
-    <p>Email: </p><a href="mailto:Imcffr2021@gmail.com">Imcffr2021@gmail.com</a>
-    <!-- <hr /> -->
+    <h6 class="contacts">Contacts:</h6>
+    <p class="contacts">Email: <a href="mailto:Imcffr2021@gmail.com">Imcffr2021@gmail.com</a></p>
+    <p class="contacts"></p>
+    <p class="contacts"></p>
+    <p>Excepting Donations</p>
     <div class="text">
       <p>Made by the turtlemaster group</p>
     </div>

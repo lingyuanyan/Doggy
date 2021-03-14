@@ -1,7 +1,6 @@
 <template>
   <div>
-    <h1>Admins</h1>
-
+    <br>
     <div v-show="!passwordCheck">
       <h4>Login</h4>
       <form id="password" @submit.prevent="passwordCompare()">
