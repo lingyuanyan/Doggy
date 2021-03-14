@@ -1,0 +1,6 @@
+[Unit]
+Description=Doggy socket
+[Socket]
+ListenStream= /home/wwwadmin/Doggy/Doggy.sock 
+[Install]
+WantedBy=sockets.target
