@@ -2,7 +2,7 @@
   <div class="">
     <br>
     <p class="language" @click="changeLanguage()" v-show="!english">English</p>
-    <p class="language" @click="changeLanguage()" v-show="english">Chinese</p>
+    <p class="language" @click="changeLanguage()" v-show="english">中文</p>
     <div v-show="english" class="english">
       <h3>About Us</h3>
       <p>“Fur Friend Rescue” is one of projects from a non-profit organization called "Little
