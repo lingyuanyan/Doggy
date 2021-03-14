@@ -32,7 +32,7 @@
       return {
         passwordInput: '',
         passwordCheck: false,
-        passwordHash: -26933465,
+        passwordHash: 1811251467,
         passwordError: false,
         uploadDataMode: false,
         deleteDataMode: false,
@@ -45,7 +45,8 @@
       passwordCompare() {
         let inputHash = this.passwordInput.hashCode();
         console.log('UserInput');
-        console.log(inputHash);
+   //   console.log(this.passwordHash);
+   //   console.log(inputHash);
         this.passwordCheck = (inputHash == this.passwordHash);
         console.log(this.passwordCheck);
         if (this.passwordCheck == true) {

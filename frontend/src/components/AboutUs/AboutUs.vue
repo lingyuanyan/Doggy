@@ -105,7 +105,8 @@
       }
     },
     created() {},
-    mounted() {},
+    mounted() {
+    },
     methods: {
       changeLanguage() {
         this.english = !this.english;
