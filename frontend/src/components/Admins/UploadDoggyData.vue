@@ -47,8 +47,7 @@
         return this.uploaded_image !== require('@/assets/upload.png') &&
         this.uploaded_image !== null &&
         this.dogName !== null &&
-        this.dogDes !== null &&
-        this.dogCaption !== null;
+        this.dogDes !== null;
       },
       async submitForm() {
         if (this.requiredFields()) {
@@ -58,8 +57,6 @@
           console.log(this.dogName);
           console.log('Uploaded Description:');
           console.log(this.dogDes);
-          console.log('Uploaded Caption:');
-          console.log(this.dogCaption);
           axios.post('/api/doggies/', {
             name: this.dogName,
             des: this.dogDes,
@@ -85,11 +82,6 @@
         }
       },
       dogName() {
-        if (this.requiredFields()) {
-          this.error = false
-        }
-      },
-      dogCaption() {
         if (this.requiredFields()) {
           this.error = false
         }
