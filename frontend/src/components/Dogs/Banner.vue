@@ -18,8 +18,14 @@
         </svg>
       </div>
     </div>
-    <nav class="links">
-        <router-link to="/Dogs" class="align-middle link">Dogs</router-link> <router-link to="/AboutUs" class="align-middle link">About us</router-link> <router-link to="/Admins" class="align-middle link">Admins</router-link>
+    <nav class="links d-flex justify-content-evenly">
+        <router-link to="/Dogs" class="link contacts d-flex justify-content-evenly">Dogs</router-link>
+        <router-link to="/AboutUs" class="link contacts d-flex justify-content-evenly">About us</router-link>
+        <router-link to="/Admins" class="link contacts d-flex justify-content-evenly">Admins</router-link>
+        <router-link to="/Adopt" class="link contacts d-flex justify-content-evenly">Adopt</router-link>
+        <router-link to="/Gallery" class="link contacts d-flex justify-content-evenly">Gallery</router-link>
+        <router-link to="/GetInvolved" class="link contacts d-flex justify-content-evenly">GetInvolved</router-link>
+        <router-link to="/Programs" class="link contacts d-flex justify-content-evenly">Programs</router-link>
     </nav>
   </div>
 </template>
@@ -85,8 +91,6 @@
    .link:hover, .link:active, .link.router-link-exact-active{
     background-color: #1e90ff;
     text-decoration: none;
-    border-top: 2px solid white;
-    padding: 11px;
   }
 
 
