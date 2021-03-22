@@ -1,4 +1,7 @@
 <template lang="html">
+  <div class="adopt">
+    <Carousel></Carousel>
+  </div>
 </template>
 
 <script>
@@ -6,7 +9,6 @@ import Carousel from "./Carousel.vue";
   export default {
     name: "Adopt",
     data() {
-      }
     },
     created() {},
     mounted() {},

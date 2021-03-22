@@ -1,4 +1,7 @@
 <template lang="html">
+  <div class="carousel">
+    
+  </div>
 </template>
 
 <script>
@@ -6,7 +9,6 @@
     
     name: "Carousel",
     data() {
-      }
     },
     created() {},
     mounted() {},

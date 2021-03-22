@@ -1,5 +1,6 @@
 <template lang="html">
-  <vue-pure-lightbox
+  <div class="gallery">
+  <!-- <vue-pure-lightbox
    style="width: 20em"
    thumbnail="http://placekitten.com/300/200"
    :images="[
@@ -7,7 +8,8 @@
      'http://placekitten.com/800/601',
      'http://placekitten.com/800/599',
    ]"
- ></vue-pure-lightbox>
+ ></vue-pure-lightbox> -->
+   </div>
 </template>
 
 <script>
@@ -20,13 +22,13 @@
     methods: {
     },
     components: {
-      VuePureLightbox,
+      // VuePureLightbox,
     },
   }
 </script>
 
 <style lang="css" scoped>
-.lightbox {}
+/* .lightbox {}
 .lightbox__thumbnail {}
 .lightbox__thumbnail img {}
 .lightbox__close {}
@@ -35,5 +37,5 @@
 .lightbox__arrow--invisible {}
 .lightbox__arrow svg {}
 .lightbox__image {}
-.lightbox__image img {}
+.lightbox__image img {} */
 </style>
