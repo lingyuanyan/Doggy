@@ -3,7 +3,7 @@
     <div class="d-flex justify-content-between">
       <div class="logos d-flex justify-content-evenly">
         <img src="../../assets/DoggyLogo.png" class="logo"/>
-        <img src="../../assets/LittleMasterLogo.jpg" class="LMCLogo"/>
+  <!--      <img src="../../assets/LittleMasterLogo.jpg" class="LMCLogo"/>-->
       </div>
       <h1>Fur Friend Rescue</h1>
       <div class="contacts d-flex justify-content-evenly">
