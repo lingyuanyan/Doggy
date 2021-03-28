@@ -1,5 +1,6 @@
 <template lang="html">
   <div class="gallery">
+    <h3>Gallery</h3>
     <div class="images d-flex justify-content-center" v-show="!lightbox">
       <img src="../assets/37d.jpg" @click="openLightbox()" alt="dog">
       <img src="../assets/37d.jpg" @click="openLightbox()" alt="dog">

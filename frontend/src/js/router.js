@@ -8,7 +8,7 @@ import Adopt from "../components/Adopt.vue";
 import Gallery from "../components/Gallery.vue";
 import GetInvolved from "../components/GetInvolved.vue";
 import Programs from "../components/Programs.vue";
-
+import News from "../components/News.vue";
 
 const router = createRouter({
   history: createWebHistory(),
@@ -21,6 +21,7 @@ const router = createRouter({
     { name:'gallery', path: '/gallery', components:  {default: Gallery, footer: Footer, header: Banner}},
     { name:'getInvloved', path: '/getinvolved', components:  {default: GetInvolved, footer: Footer, header: Banner}},
     { name:'programs', path: '/programs', components:  {default: Programs, footer: Footer, header: Banner}},
+    { name:'newa', path: '/news', components:  {default: News, footer: Footer, header: Banner}},
     { path: '/notFound(.*)', redirect:'/dogs'}
   ],
 });

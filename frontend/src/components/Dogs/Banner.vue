@@ -20,12 +20,13 @@
     </div>
     <nav class="links d-flex justify-content-evenly">
         <router-link to="/Dogs" class="link contacts d-flex justify-content-evenly">Dogs</router-link>
-        <router-link to="/AboutUs" class="link contacts d-flex justify-content-evenly">About us</router-link>
-        <router-link to="/Admins" class="link contacts d-flex justify-content-evenly">Admins</router-link>
+        <router-link to="/AboutUs" class="link contacts d-flex justify-content-evenly">About Us</router-link>
         <router-link to="/Adopt" class="link contacts d-flex justify-content-evenly">Adopt</router-link>
         <router-link to="/Gallery" class="link contacts d-flex justify-content-evenly">Gallery</router-link>
-        <router-link to="/GetInvolved" class="link contacts d-flex justify-content-evenly">GetInvolved</router-link>
+        <router-link to="/GetInvolved" class="link contacts d-flex justify-content-evenly">Get Involved</router-link>
         <router-link to="/Programs" class="link contacts d-flex justify-content-evenly">Programs</router-link>
+        <router-link to="/News" class="link contacts d-flex justify-content-evenly">News</router-link>
+        <router-link to="/Admins" class="link contacts d-flex justify-content-evenly">Admins</router-link>
     </nav>
   </div>
 </template>
