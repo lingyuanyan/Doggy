@@ -35,25 +35,6 @@
         </p>
       </div>
     </div>
-    <div class="whoweare">
-        <div>
-          <h2>Who We are</h2>
-          <br><br>
-          The Fur Friend Rescue, is a non - profit organization. Ran for the purpose of helping dogs from China to find a home in America...etc.
-        </div>
-        <div>
-          <img src="../../assets/28d.jpg" alt="">
-        </div>
-        <div>
-          <img src="../../assets/21d.jpg" alt="">
-        </div>
-        <div>
-        
-        "The perfect rescue dog is out there for everybody. You just have to find it."
-        <br><br>
-        &mdash;&ensp;Josh Hopkins
-        </div>    
-      </div>
   </div>
 </template>
 
@@ -173,30 +154,5 @@
 
   h1 {
     font-variant: small-caps;
-  }
-
-  .whoweare {
-    text-align: center;
-  }
-
-  .whoweare>div {
-    -webkit-box-sizing: border-box;
-       -moz-box-sizing: border-box;
-            box-sizing: border-box;
-    display: inline-block;
-    width: 47%;
-    height: 25%;
-    margin: 1%;
-    text-align: center;
-    vertical-align: middle;
-    padding: 1% 2.5%;
-  }
-
-  .whoweare>div h2 {
-    font-weight: 100;
-  }
-
-  .whoweare>div>img {
-    width: 40vw;
   }
 </style>
