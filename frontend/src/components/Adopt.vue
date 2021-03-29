@@ -10,6 +10,9 @@ import Carousel from "./Carousel.vue";
   export default {
     name: "Adopt",
     data() {
+      return {
+
+      }
     },
     created() {},
     mounted() {},
