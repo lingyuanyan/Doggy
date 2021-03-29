@@ -61,6 +61,7 @@ export default {
 <style scoped>
 #content {
   width: 100vw;
+  clear: both;
 }
   @media only screen and (max-width: 576px) {
     .dog {
