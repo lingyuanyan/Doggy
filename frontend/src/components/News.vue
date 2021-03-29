@@ -1,6 +1,6 @@
 <template lang="html">
-  <div class="GetInvolved">
-    <h3 class="title">Get Involved</h3>
+  <div class="News">
+    <h3 class="title">News</h3>
     <p class="subtitles">We work hard to get our efforts noticed by the media and are so proud when this goal comes to fruition. A well informed community is an empowered one as well, so take a look at some of the latest coverage we’ve received below and help spread the word about all the amazing developments at Fur Friend Rescue. (Example)</p>
 <br>
   <div class="info d-flex justify-content-around">
@@ -40,7 +40,7 @@
 
 <script>
   export default {
-    name: "GetInvolved",
+    name: "News",
     data() {
       return {
 

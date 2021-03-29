@@ -59,7 +59,7 @@
     <!-- <div class="d-flex justify-content-between">
       <div class="logos d-flex justify-content-evenly">
         <img src="../../assets/DoggyLogo.png" class="logo"/>
-        <img src="../../assets/LittleMasterLogo.jpg" class="LMCLogo"/>
+  <!--      <img src="../../assets/LittleMasterLogo.jpg" class="LMCLogo"/>-->
       </div>
       <h1>Fur Friend Rescue</h1>
       <div class="contacts d-flex justify-content-evenly">
@@ -74,12 +74,26 @@
         </svg>
       </div>
     </div>
+<<<<<<< HEAD
     <nav class="links">
         <router-link to="/Dogs" class="link">Dogs</router-link> <router-link to="/AboutUs" class="link">About us</router-link> <router-link to="/Admins" class="link">Admins</router-link>
     </nav> -->
 
 
 
+=======
+    <nav class="links d-flex justify-content-evenly">
+        <router-link to="/Dogs" class="link contacts d-flex justify-content-evenly">Dogs</router-link>
+        <router-link to="/AboutUs" class="link contacts d-flex justify-content-evenly">About Us</router-link>
+        <router-link to="/Adopt" class="link contacts d-flex justify-content-evenly">Adopt</router-link>
+        <router-link to="/Gallery" class="link contacts d-flex justify-content-evenly">Gallery</router-link>
+        <router-link to="/GetInvolved" class="link contacts d-flex justify-content-evenly">Get Involved</router-link>
+        <router-link to="/Programs" class="link contacts d-flex justify-content-evenly">Programs</router-link>
+        <router-link to="/News" class="link contacts d-flex justify-content-evenly">News</router-link>
+        <router-link to="/Admins" class="link contacts d-flex justify-content-evenly">Admins</router-link>
+    </nav>
+  </div>
+>>>>>>> 28e1117c37ecf5111e7935c5245ce42d2d465b60
 </template>
 
   <script>
@@ -142,9 +156,15 @@
     margin-top: 3px;
   }
 
+<<<<<<< HEAD
    .link:hover, .link:active {
     text-decoration: underline;
     border-top: 2px solid white;
+=======
+   .link:hover, .link:active, .link.router-link-exact-active{
+    background-color: #1e90ff;
+    text-decoration: none;
+>>>>>>> 28e1117c37ecf5111e7935c5245ce42d2d465b60
   }
 
   .link.router-link-exact-active {
