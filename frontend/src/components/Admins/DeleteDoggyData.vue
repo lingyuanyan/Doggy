@@ -1,19 +1,8 @@
 <template>
   <div class="">
     <h4>Delete Info</h4>
-    <div class="doggy">
-      <DogImage v-if="doggy !== null"
-        :id="doggy.id"
-        :name="doggy.name"
-        class="col-sm-6 col-xs-12 col-md-4 col-lg-3"
-        :path="doggy.pic"
-        :caption="doggy.caption"
-        :des="doggy.des"
-      ></DogImage>
-    </div>
-    <hr>
     <form id="Delete" @submit.prevent="deleteDog()">
-      <label for="delete">Enter the dog's id</label>
+      <label for="delete">Enter the dog's id:</label>
       <input type="number" id="id" name="id" v-model="doggyId"><br>
       <input type="submit">
     </form>
@@ -22,7 +11,6 @@
 
 <script>
 import axios from 'axios';
-import DogImage from "../Dogs/DogImage.vue";
 
 export default {
   name: "Content",
@@ -69,7 +57,6 @@ export default {
     },
   },
   components: {
-    DogImage,
   },
 };
 

@@ -1,18 +1,25 @@
 <template>
-  <div @click="onClicked()" id="doginfo">
-    <div class=" d-flex justify-content-evenly">
+    <div @click="onClicked()" id="doginfo">
+      <img class="img" :src="path"/><br>
+      <div class="d-flex justify-content-center">
+        <h4 class="name">{{ name }}</h4>
+        <p class="id">{{id}}</p>
+      </div>
+
+      <!--
       <div class=" d-flex justify-content-evenly">
-        <img class="img row-sm-6" :src="path"/>
-      </div>
-      <div class="">
         <div class=" d-flex justify-content-evenly">
-          <h3 class="name col-xs-9">{{ name }}</h3>
-          <span class="id col-xs-3">{{id}}</span>
+          <img class="img row-sm-6" :src="path"/>
         </div>
-        <p class="des row-sm-6">{{ des }}</p>
-      </div>
+        <div class="">
+          <div class=" d-flex justify-content-evenly">
+            <h3 class="name col-xs-9">{{ name }}</h3>
+            <span class="id col-xs-3">{{id}}</span>
+          </div>
+          <p class="des row-sm-6">{{ des }}</p>
+        </div>
+      </div>-->
     </div>
-  </div>
 </template>
 
 <script>
@@ -48,30 +55,20 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-#doginfo {
-  border: solid black 1px;
-  border-radius: 15px;
-  width: 33em;
-  margin: 15p;
-}
+
 img {
   height: 100px;
-}
-.des {
-  word-wrap: break-word;
-  text-align: center;
+  width: 100px;
 }
 .id{
   border-radius: 100px;
   border: dotted black 3px;
-  padding: 3px;
-}
-h3 {
-  float: left;
-
+  padding: 1px;
 }
 .name, .id{
   margin: 5px;
-  display: inline-block;
+}
+.name {
+  text-align: center;
 }
 </style>

@@ -1,5 +1,17 @@
 <template>
   <div id="content">
+    <div class="background-div">
+      <div class="middiv">
+        <h1>Fur Friend<br>
+        Rescue</h1>
+        <br><br>
+        <h5>Working Towards a Brighter Future</h5>
+        <br><br>
+        <p>
+          At Fur Friend Rescue, wellbeing is at the forefront of what we’re working together towards. Our programs and activities are designed to be a catalyst that helps community members reach their goals and fulfill their potential. Learn more about the positive impact we have and join us in bringing about positive change.
+        </p>
+      </div>
+    </div>
     <div class="whoweare">
         <div>
           <h2>Who We are</h2>
@@ -13,11 +25,11 @@
           <img src="../../assets/21d.jpg" alt="">
         </div>
         <div>
-        
+
         "The perfect rescue dog is out there for everybody. You just have to find it."
         <br><br>
         &mdash;&ensp;Josh Hopkins
-      </div>    
+      </div>
     </div>
     <br>
     <DogImage v-for="(doggy, i) in doggy_list" :key="i"
@@ -135,5 +147,30 @@ export default {
       width: 20vw;
       display: inline-block;
     }
+  }
+  .text{
+    float: left;
+  }
+  .background-div {
+    width: 97vw;
+    height: 80vh;
+    background: #808080;
+    background-image: url("../../assets/18d.jpg");
+    clear: both;
+    -webkit-filter: contrast(120%);
+            filter: contrast(120%);
+  }
+  .middiv {
+    width: 60vw;
+    height: 60vh;
+    margin: 0 auto;
+    position: relative;
+    top: 7.5vh;
+    text-align: justify;
+    color: #fff;
+  }
+
+  h1 {
+    font-variant: small-caps;
   }
 </style>
