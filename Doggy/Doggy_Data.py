@@ -32,5 +32,5 @@ def DoggyData(drop_table):
     conn.commit()
     print("...")
     cur.close()
-    print("Your Data has been successfully uploaded")
+    print("Your Data was successfully uploaded")
 DoggyData('yes')
